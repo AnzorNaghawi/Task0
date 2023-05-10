@@ -1,6 +1,7 @@
 const bookList = [];
 var itemId = 0;
 var displayedbooks = [];
+// -----
 function AddBook(){
     console.log("OPENING DIALOG");
     document.getElementById("backdrop").style.display ="flex";
