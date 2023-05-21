@@ -242,11 +242,33 @@ input:focus {
 .dropdown-item:hover{
   background-color: lightsalmon;
 }
+.dropdown-item1{
+  background-color:transparent; 
+  border:none;
+}
+.dropdown-item1:hover{
+  background-color: lightsalmon;
+}
+.dropdown-itemR{
+  background-color:transparent; 
+  border:none;
+}
+.dropdown-itemR:hover{
+  background-color: lightsalmon;
+}
 @media (min-width: 768px) {
   .modal {
     width: 40rem;
     left: calc(50% - 20rem);
   }
+}
+.active{
+  background-color:darkgrey;
+  color:white
+}
+.inactive{
+  color:darkgrey;
+  background-color:white;
 }
 
 @keyframes fade-slide-in {

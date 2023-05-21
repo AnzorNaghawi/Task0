@@ -14,8 +14,11 @@
       <div class="modal__content">
         <label for="title">Title</label>
         <input type="text" name="title" id="title" />
+        <p style="color:red" hidden="true" id="title-validate">Title cannot contain special characters</p>
         <label for="image-url">Image URL</label>
         <input type="text" name="image-url" id="image-url" />
+        <p style="color:red" hidden="true" id="image-validate">URL cannot contain special characters</p>
+
         <label for="rating">Your Rating</label>
         <input
           type="number"
@@ -25,6 +28,7 @@
           name="rating"
           id="rating"
         />
+        <p style="color:red" hidden="true" id="rating-validate">Rating must be between 0-5</p>
       </div>
       <div class="modal__actions">
         <button class="btn btn--passive" onclick="AddBook_end(action='Cancel')">Cancel</button>
@@ -38,8 +42,8 @@
         undone!
       </p>
       <div class="modal__actions">
-        <button class="btn btn--passive">No (Cancel)</button>
-        <button class="btn btn--danger">Yes</button>
+        <button class="btn btn--passive" onclick="deleteprompt()">No (Cancel)</button>
+        <button class="btn btn--danger" id='promptdeleteyes' onclick="deletebook(this)">Yes</button>
       </div>
     </div>
 
@@ -55,10 +59,24 @@
         <button class="dropdown-item" onclick="sort('title')" >Title</button><br>
         <button class="dropdown-item" onclick="sort('rating')">Rating</button>
       </div>
+      <button onclick="ShowDropDown1()">Filter</button>
+      <div id="DropDown1" hidden="true">
+        <input class="dropdown-item1Input" id="searchtitleInput"><br>
+        <button class="dropdown-item1" onclick="filter()" >Title</button><br>
+        <button class="dropdown-item1" onclick="ShowDropDownR('rating')">Rating</button>
+        <div id="DropDownR" hidden="true">
+          <button class="dropdown-itemR" onclick="filterR(1)" >1</button><br>
+          <button class="dropdown-itemR" onclick="filterR(2)" >2</button><br>
+          <button class="dropdown-itemR" onclick="filterR(3)" >3</button><br>
+          <button class="dropdown-itemR" onclick="filterR(4)" >4</button><br>
+          <button class="dropdown-itemR" onclick="filterR(5)" >4</button><br>
+        </div>
+      </div>
       <section id="entry-text" class="card">
         <p>List Currently Empty!!!</p>
       </section>
       <ul id="book-list"></ul>
+      <ul id="pagelist"></ul>
     </main>
   </body>
 </html>
